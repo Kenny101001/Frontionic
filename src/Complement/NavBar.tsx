@@ -1,19 +1,21 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { IonApp, IonHeader, IonToolbar, IonTitle, IonPage, IonButtons, IonMenuButton, IonButton } from '@ionic/react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useParams } from "react-router";
 import SousMenu from './SousMenu';
-import { useData } from './DataContext';
+import { createContext, useContext} from 'react';
 
-const NavBar: React.FC = () => (
+const NavBar: React.FC = () => {
 
-    const { setInformation } = useData();
+  const history = useHistory();
 
-  const handleButtonClick = (info) => {
-    setInformation(info);
+  const etat = 'information';
+
+  const sendInfo = (info: string) => {
+    history.push('/'+info+'/'+info);
   };
 
   return(
-  <IonApp>
+    <IonApp>
     <IonPage>
     <IonHeader>
         <IonToolbar>
@@ -22,9 +24,9 @@ const NavBar: React.FC = () => (
           </IonButtons>
           <IonTitle>FootBall Statistique</IonTitle>
           <IonButtons slot="end">
-            <IonButton routerLink="/general">General</IonButton>
-            <IonButton routerLink="/attack">Attack</IonButton>
-            <IonButton routerLink="/defence">Défence</IonButton>
+            <IonButton onClick={() =>sendInfo('general')}>General</IonButton>
+            <IonButton onClick={() =>sendInfo("attack")}>Attack</IonButton>
+            <IonButton onClick={() => sendInfo('defence')}>Défence</IonButton>
             <p>|</p>
             <SousMenu />
           </IonButtons>
@@ -34,23 +36,11 @@ const NavBar: React.FC = () => (
     </IonPage>
   </IonApp>
   );
-);
 
-const SourcePage: React.FC = () => {
-    const history = useHistory();
   
-    const handleRedirection = (info: string) => {
-      history.push(`/general/${info}`);
-    };
-  
-    return (
-      <div>
-        {/* Ton contenu de la page source */}
-        <button onClick={() => handleRedirection('Hello')}>
-          Rediriger vers General avec des informations
-        </button>
-      </div>
-    );
   };
+
+
+
 
 export default NavBar;

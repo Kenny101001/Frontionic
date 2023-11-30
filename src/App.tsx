@@ -34,13 +34,13 @@ const App: React.FC = () => (
         <Route exact path="/accueil">
           <Accueil />
         </Route>
-        <Route exact path="/general:variable">
+        <Route exact path="/general/:etat">
           <Accueil />
         </Route>
-        <Route exact path="/attack:variable">
+        <Route exact path="/attack/:etat">
           <Accueil />
         </Route>
-        <Route exact path="/defence:variable">
+        <Route exact path="/defence/:etat">
           <Accueil />
         </Route>
 
