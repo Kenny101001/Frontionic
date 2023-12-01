@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <table id="maTable" class="table">
+      <thead class="header">
+        <tr class="header1">
+          <th><a href="index.html">General</a></th>
+          <th><a href="defense.html">Defense</a></th>
+          <th><a href="attaque.html">Attaque</a></th>
+        </tr>
+        <tr class="header2">
+          <td><a href="index.html">Generale</a></td>
+          <td><a href="g_domicile.html">Domicile</a></td>
+          <td><a href="g_exterieur.html">Exterieur</a></td>
+        </tr>
+        <tr class="header3">
+          <th>Equipe</th>
+          <th>Competition</th>
+          <th>Buts</th>
+          <th>Tirs pm</th>
+          <th>Carton jaune</th>
+          <th>Carton rouge</th>
+          <th>Possession%</th>
+          <th>PassesRéussies%</th>
+          <th>AériensGagnés</th>
+          <th>Note</th>
+        </tr>
+      </thead>
+      <tbody class="content"></tbody>
+    </table>
+    <script>
+      // Fonction pour effectuer une requête AJAX
+      function chargerListe() {
+        var xhr = new XMLHttpRequest();
+        xhr.open(
+          "GET",
+          "http://localhost/Frontionic/foot/index.php/General_Exterieur",
+          true
+        );
+
+        xhr.onload = function () {
+          if (xhr.status >= 200 && xhr.status < 300) {
+            // Succès de la requête
+            var donnees = JSON.parse(xhr.responseText);
+            afficherListe(donnees.data);
+          } else {
+            // Gestion des erreurs
+            console.error(
+              "Erreur lors de la récupération des données depuis l'API."
+            );
+          }
+        };
+
+        xhr.onerror = function () {
+          console.error(
+            "Erreur réseau lors de la récupération des données depuis l'API."
+          );
+        };
+
+        xhr.send();
+      }
+
+      // Fonction pour afficher la liste dans le DOM sous forme de tableau
+      function afficherListe(data) {
+        var maTable = document
+          .getElementById("maTable")
+          .getElementsByTagName("tbody")[0];
+
+        // Effacer le contenu actuel de la table
+        maTable.innerHTML = "";
+
+        // Ajouter chaque élément de la liste au tableau HTML
+        data.forEach(function (element) {
+          var row = maTable.insertRow();
+          var cellEquipe = row.insertCell(0);
+          var cellLigue = row.insertCell(1);
+          var cellButs = row.insertCell(2);
+          var cellTirMatch = row.insertCell(3);
+          var cellCartonJaune = row.insertCell(4);
+          var cellCartonRouge = row.insertCell(5);
+          var cellPossession = row.insertCell(6);
+          var cellPassesReussies = row.insertCell(7);
+          var cellAerienGagnes = row.insertCell(8);
+          var cellNote = row.insertCell(9);
+
+          cellEquipe.textContent = element.equipe;
+          cellLigue.textContent = element.idLigue;
+          cellButs.textContent = element.buts;
+          cellTirMatch.textContent = element.tirMatch;
+          cellCartonJaune.textContent = element.cartonJaune;
+          cellCartonRouge.textContent = element.cartonRouge;
+          cellPossession.textContent = element.possession;
+          cellPassesReussies.textContent = element.passesReussies;
+          cellAerienGagnes.textContent = element.aerienGagnes;
+          cellNote.textContent = element.note;
+        });
+      }
+
+      // Appeler la fonction pour charger la liste au chargement de la page
+      window.onload = chargerListe;
+    </script>
+  </body>
+</html>
