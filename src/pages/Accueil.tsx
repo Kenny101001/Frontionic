@@ -1,11 +1,15 @@
 import React from 'react';
 import { useHistory, useParams } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { IonContent, IonPage, IonGrid, IonRow, IonCol, IonHeader, IonToolbar, IonTitle, IonApp } from '@ionic/react';
 import NavBar from '../Complement/NavBar';
 import Tableaux from '../components/Tableaux';
 
+
+
 const Accueil: React.FC = () => {
+
+  
 
     const { etat }: { etat?: string } = useParams();
 

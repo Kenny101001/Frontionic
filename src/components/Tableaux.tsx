@@ -1,7 +1,25 @@
-import React from 'react';
+import React, {useState,useEffect} from 'react';
 import { IonContent, IonPage, IonGrid, IonRow, IonCol, IonHeader, IonToolbar, IonTitle, IonApp, } from '@ionic/react';
+import axios from 'axios';
+
 
 const Tableaux: React.FC = () => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('http://localhost:5000/api/data');
+        setData(response.data);
+      } catch (error) {
+        console.error('Erreur lors de la récupération des données :', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+
     return (
 <IonGrid>
         <IonRow className="ion-text-center">
@@ -34,6 +52,9 @@ const Tableaux: React.FC = () => {
             </IonCol>
           </IonRow>
           {/* En-tête du tableau */}
+          {data.map(item => (
+          
+
           <IonRow className="ion-text-center">
           <IonCol size="12" size-md="1">
           Contenu 1
@@ -63,7 +84,9 @@ const Tableaux: React.FC = () => {
           Contenu 9
         </IonCol>
           </IonRow>
-        </IonGrid>
+          ))}
+          
+        </IonGrid> 
     );
 };
 export default Tableaux;
