@@ -1,0 +1,199 @@
+{
+	"info": {
+		"_postman_id": "bbd928d5-11f4-4c6d-aff1-d1c57fe07c8f",
+		"name": "WS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31521698"
+	},
+	"item": [
+		{
+			"name": "General_General",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/Frontionic/foot/index.php/General_General",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"Frontionic",
+						"foot",
+						"index.php",
+						"General_General"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "General_Domicile",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/Frontionic/foot/index.php/General_Domicil",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"Frontionic",
+						"foot",
+						"index.php",
+						"General_Domicil"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "General_Exterieur",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/Frontionic/foot/index.php/General_Exterieur",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"Frontionic",
+						"foot",
+						"index.php",
+						"General_Exterieur"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Defense_General",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/Frontionic/foot/index.php/Defense_General",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"Frontionic",
+						"foot",
+						"index.php",
+						"Defense_General"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Defense_Domicile",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/Frontionic/foot/index.php/Defense_Domicile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"Frontionic",
+						"foot",
+						"index.php",
+						"Defense_Domicile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Defense_Exterieur",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/Frontionic/foot/index.php/Defense_Exterieur",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"Frontionic",
+						"foot",
+						"index.php",
+						"Defense_Exterieur"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Attaque_General",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/Frontionic/foot/index.php/Attaque_General",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"Frontionic",
+						"foot",
+						"index.php",
+						"Attaque_General"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Attaque_Domicile",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/Frontionic/foot/index.php/Attaque_Domicile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"Frontionic",
+						"foot",
+						"index.php",
+						"Attaque_Domicile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Attaque_Exterieur",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/Frontionic/foot/index.php/Attaque_Exterieur",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"Frontionic",
+						"foot",
+						"index.php",
+						"Attaque_Exterieur"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
